@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6aE9967A"
+    android:orientation="vertical"
+    tools:context=".CalculatorActivity">
+
+    <!--标题-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FA8072"
+        android:gravity="center"
+        android:text="计算器"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+
+    <!--利用相对布局，首先根据自适应使GridView居于底部
+    再使EditText在GridView之上同时匹配父容器顶部-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridView
+            android:id="@+id/grid_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="4"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"></GridView>
+
+        <EditText
+            android:id="@+id/input_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/grid_buttons"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/shape_edit"
+            android:gravity="start"
+            android:hint="输入表达式"
+            android:padding="10dp"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
